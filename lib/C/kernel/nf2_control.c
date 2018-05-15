@@ -1232,9 +1232,9 @@ int nf2c_probe(struct pci_dev *pdev, const struct pci_device_id *id,
 
 	/* Set up the network device... */
 	for (i = 0; i < MAX_IFACE; i++) {
-		netdev = card->ndev[i] = alloc_netdev(
+		netdev = card->ndev[i] = (
 				sizeof(struct nf2_iface_priv),
-				devname, nf2c_init);
+				devname, NET_NAME_UNKNOWN, nf2c_init);
 		if (netdev == NULL) {
 			printk(KERN_ERR "nf2: Could not allocate ethernet "
 					"device.\n");
