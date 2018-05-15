@@ -95,11 +95,10 @@ static const struct ethtool_ops nf2_ethtool_ops = {
 	.get_settings		= nf2_get_settings,
 	.set_settings		= nf2_set_settings,
 	.get_drvinfo		= nf2_get_drvinfo,
-	.get_link		= ethtool_op_get_link,
-	.phys_id		= nf2_phys_id,
+	.get_link		= ethtool_op_get_link
 };
 
 void nf2_set_ethtool_ops(struct net_device *dev)
 {
-	SET_ETHTOOL_OPS(dev, &nf2_ethtool_ops);
+	//SET_ETHTOOL_OPS(dev, &nf2_ethtool_ops);
 }
